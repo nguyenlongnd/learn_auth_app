@@ -2,7 +2,7 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { Link } from "react-router-dom";
 
-const SignIn = () => {
+const SignUp = () => {
   return (
     <div className="w-[500px] mx-auto">
       <h1 className="text-2xl text-slate-600 m-3 text-center font-black">
@@ -22,14 +22,12 @@ const SignIn = () => {
           Submit
         </Button>
       </Form>
-      <div className="flex gap-2">
+      <div>
         <p>do not have account?</p>
-        <div className="text-red-600">
-          <Link to={"/sign-up"}> Sign up</Link>
-        </div>
+        <Link to={"/sign-up"}> Sign up</Link>
       </div>
     </div>
   );
 };
 
-export default SignIn;
+export default SignUp;
