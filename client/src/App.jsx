@@ -1,13 +1,22 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-
+import Layout from "./Layout";
+import "bootstrap/dist/css/bootstrap.min.css";
+import HomePage from "./components/HomePage";
+import SignIn from "./components/SignIn";
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: (
-      <h1 className="text-3xl font-bold underline text-cyan-600">
-        Hello world!
-      </h1>
-    ),
+    path: "",
+    element: <Layout />,
+    children: [
+      {
+        path: "/",
+        element: <HomePage />,
+      },
+      {
+        path: "/sign-in",
+        element: <SignIn />,
+      },
+    ],
   },
 ]);
 function App() {
