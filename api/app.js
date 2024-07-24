@@ -1,6 +1,8 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
+
+const userRoutes = require("./routes/user.route.js");
 dotenv.config();
 
 // create app
@@ -23,9 +25,10 @@ App.use(express.json());
 const PORT = 5000;
 
 //config router
-App.use("/", (req, res) => {
+App.get("/", (req, res) => {
   res.send("this is home page");
 });
+App.use("/api/user", userRoutes);
 
 // listen port
 App.listen(PORT, () => console.log(`running app at port: ${PORT}`));
