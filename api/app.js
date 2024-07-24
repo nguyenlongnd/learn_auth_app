@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 
 const userRoutes = require("./routes/user.route.js");
+const authRoutes = require("./routes/auth.route.js");
 dotenv.config();
 
 // create app
@@ -29,6 +30,7 @@ App.get("/", (req, res) => {
   res.send("this is home page");
 });
 App.use("/api/user", userRoutes);
+App.use("/api/auth", authRoutes);
 
 // listen port
 App.listen(PORT, () => console.log(`running app at port: ${PORT}`));
