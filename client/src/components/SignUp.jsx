@@ -15,6 +15,7 @@ const SignUp = () => {
     <div className="w-[500px] mx-auto">
       <h1 className="text-2xl text-slate-600 m-3 text-center font-black">
         sign up app
+        sign up app
       </h1>
       <Form onSubmit={handleSignUp}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
