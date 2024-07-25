@@ -6,7 +6,7 @@ const SignUp = () => {
   return (
     <div className="w-[500px] mx-auto">
       <h1 className="text-2xl text-slate-600 m-3 text-center font-black">
-        sign in app
+        sign up app
       </h1>
       <Form>
         <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -19,7 +19,7 @@ const SignUp = () => {
           <Form.Control type="password" placeholder="Password" />
         </Form.Group>
         <Button variant="primary" type="submit">
-          Submit
+          Sign Up
         </Button>
       </Form>
       <div>
