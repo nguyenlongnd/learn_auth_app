@@ -1,11 +1,11 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-const baseUrl = "http://localhost:5173";
+const baseUrl = "http://localhost:5000";
 export const authApi = createApi({
   reducerPath: "authApi",
   baseQuery: fetchBaseQuery({
     baseUrl: `${baseUrl}/auth/`,
   }),
-  endpoints: (builder) => {
+  endpoints: (builder) => ({
     // eslint-disable-next-line no-unused-labels
     signUp: builder.mutation({
       query: (payload) => ({
@@ -13,8 +13,8 @@ export const authApi = createApi({
         method: "POST",
         body: payload,
       }),
-    });
-  },
+    }),
+  }),
 });
 
 export const { useSignUpMutation } = authApi;
