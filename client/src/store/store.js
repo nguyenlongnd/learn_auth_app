@@ -5,7 +5,7 @@ import authSliceReducer from "./slices/authSlice";
 
 export const store = configureStore({
   reducer: {
-    [authApi.reducer]: authApi.reducerPath,
+    [authApi.reducerPath]: authApi.reducer,
     authSlice: authSliceReducer,
   },
   middleware: (getDefaultMiddleware) =>

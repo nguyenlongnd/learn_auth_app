@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
+const cors = require("cors");
 
 const userRoutes = require("./routes/user.route.js");
 const authRoutes = require("./routes/auth.route.js");
@@ -21,6 +22,12 @@ mongoose
 
 //convert request from json to object
 App.use(express.json());
+App.use(
+  cors({
+    origin: "http://localhost:5173",
+    credentials: true,
+  })
+);
 
 //config port
 const PORT = 5000;

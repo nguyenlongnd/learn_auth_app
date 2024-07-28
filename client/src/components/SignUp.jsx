@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useSignUpMutation } from "../store/services/authService";
 
 const SignUp = () => {
@@ -10,8 +10,8 @@ const SignUp = () => {
     email: "",
     password: "",
   });
-  const [SignUp, { data, error, isLoading }] = useSignUpMutation();
-  console.log("signUpData", signUpData);
+  const navigate = useNavigate();
+  const [SignUp] = useSignUpMutation();
   const handleChangeForm = (event) => {
     setSignUpData({
       ...signUpData,
@@ -22,13 +22,11 @@ const SignUp = () => {
     event.preventDefault();
     try {
       await SignUp(signUpData).unwrap();
+      navigate("/sign-in");
     } catch (error) {
       console.log(error);
     }
   };
-  console.log("data 333", data);
-  console.log("error 333", error);
-  console.log("isLoading 333", isLoading);
   return (
     <div className="w-[500px] mx-auto">
       <h1 className="text-2xl text-slate-600 m-3 text-center font-black">

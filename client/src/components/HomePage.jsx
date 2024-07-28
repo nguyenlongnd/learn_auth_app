@@ -1,4 +1,9 @@
+import { useSelector } from "react-redux";
+import { selectCurrentUser } from "../store/slices/authSlice";
+
 const HomePage = () => {
+  const user = useSelector(selectCurrentUser);
+  console.log("user", user);
   return (
     <div>
       <h1 className="m-5">React Router DOM</h1>
